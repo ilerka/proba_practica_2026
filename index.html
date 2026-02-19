@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Proba escrita JS 2026">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Proba práctica 2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="hero" id="hero">
+            <h1>Proba práctica n.2</h1>
+            <img src="https://images.pexels.com/photos/35659910/pexels-photo-35659910.jpeg" alt="cabecera">
+            
+            <div class="content">
+                <nav>
+                    <ul>
+                        <li><a href="#formulario">Formulario de contacto</a></li>
+                        <li><a href="#cuentaClics">Contador de clics</a></li>
+                        <li><a href="#cambiaFondo">Cambia de color el fondo</a></li>
+                        <li><a href="#cuentaCaracteres">Cuenta caracteres</a></li>
+                        <li><a href="#cajaInteractiva">Caja interactiva</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    <div class="container">
+        <section id="formulario">
+            <h2>Formulario</h2>
+            <form id="elFormulario" onsubmit="return validarFormulario()">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+                </div>
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="Escribe tu correo">
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Escribe tu teléfono">
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button type="submit">Confirmar</button>
+                <div id="errores"></div> <!--para la validación-->
+            </form>
+        </section>
+        <section id="cuentaClics">
+            <h2>Contador de clics</h2>
+            <button id="btnContador" onclick="incrementarContador()">Incrementa el contador</button>
+            <span id="valorContador" class="contador-display">0</span>
+        </section>
+        <section id="cambiaFondo">
+            <h2>Cambia a modo oscuro</h2>
+            <button id="cambiaCor" onclick="cambiarFondo()">Color aleatorio</button>
+        </section>
+        <section id="cuentaCaracteres">
+        <h2>Cuenta caracteres</h2>
+        <textarea oninput="contarCaracteres()" id="cuantosCaracteresHay" rows="2" placeholder="Escribe"></textarea>
+        <p>Caracteres: <span id="contadorCaracteres">0</span>
+        </p>
+        </section>
+        <section id="cajaInteractiva">
+            <h2>Pasa el ratón sobre la caja</h2>
+            <div class="caja" onmouseover="cambiaColor('red')" onmouseout="restauraColor()">
+            </div>
+        </section>
+    </div>
+    <footer>&copy; <span id="anhoActual"></span> Todos los derechos reservados.</footer>
+    </main>
+</body>
+</html>
